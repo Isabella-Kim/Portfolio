@@ -2,5 +2,103 @@
   float: right;
   width: 82%;
   height: 100vh;
-  background-color: rgb(255, 179, 179);
+  background-color: var(--base);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .wrapHomeInfo {
+    width: fit-content;
+    height: fit-content;
+    margin-right: 1rem;
+    .wrapHomeName {
+      text-align: right;
+      p {
+        font-size: clamp(14px, 1.25vw, 24px);
+      }
+      .name {
+        font-size: clamp(48px, 5vw, 96px);
+        font-weight: 900;
+      }
+      .chgWord {
+        display: inline-block;
+        width: fit-content;
+        height: fit-content;
+        .chgName {
+          position: relative;
+          color: transparent;
+          display: inline-block;
+          white-space: nowrap;
+          -webkit-text-stroke: 1.5px var(--primary);
+          border-left: 1px solid transparent; /* 투명한 border-left 추가 */
+          padding-left: 0.5rem;
+          animation: typingAnimation 4s infinite;
+          border: 1px solid red;
+        }
+
+        @keyframes typingAnimation {
+          0% {
+            border-left: 1px solid transparent; /* 왼쪽에서 시작하여 투명한 border-left */
+          }
+          50% {
+            border-left: 1px solid var(--primary); /* 중간에 실제 border-left로 변경하여 텍스트가 나타남 */
+          }
+          100% {
+            border-left: 1px solid transparent; /* 오른쪽으로 이동하면서 다시 투명한 border-left로 가림 */
+          }
+        }
+      }
+    }
+    .toContact {
+      margin: auto;
+      width: fit-content;
+      height: fit-content;
+      button {
+        cursor: pointer;
+        font-size: clamp(14px, 1.25vw, 24px);
+        font-weight: 700;
+        background-color: var(--primary);
+        border: none;
+        border-radius: 10px;
+        color: var(--base);
+        padding: 0.8rem 4.5rem;
+        letter-spacing: 1.5px;
+        margin-top: 5rem;
+        &:hover {
+          background-color: var(--secondary);
+        }
+      }
+    }
+
+    .mail {
+      .faHome {
+        width: clamp(28px, 1.67vw, 32px);
+        height: clamp(28px, 1.67vw, 32px);
+        margin-right: 1rem;
+      }
+      .wrapMail {
+        width: fit-content;
+        margin: auto;
+        margin-top: 1.5rem;
+        .naverMail,
+        .gMail {
+          display: flex;
+          justify-content: left;
+          align-items: center;
+          p {
+            font-size: clamp(14px, 1.04vw, 20px);
+            line-height: 50px;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+  .wrapHomeImg {
+    width: fit-content;
+    height: fit-content;
+    margin-left: 1rem;
+    img {
+      width: clamp(250px, 38.28vw, 735px);
+    }
+  }
 }
