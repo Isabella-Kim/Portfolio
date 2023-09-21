@@ -1,0 +1,22 @@
+.Header {
+  position: relative;
+  background-color: var(--primary);
+  width: 18%;
+  height: 100vh;
+  position: fixed;
+  z-index: 100;
+  .wrapHeader {
+    margin: 6rem auto;
+    padding: 0 2.5rem;
+    .nav {
+      margin: 2rem auto;
+      a {
+        padding: 1rem 0;
+        display: block;
+        color: var(--base);
+        font-size: var(--h4);
+        font-weight: 500;
+      }
+    }
+  }
+}

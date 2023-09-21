@@ -1,5 +1,5 @@
 //Libraries
-import { SectionsContainer, Section } from "react-fullpage";
+import React, { useRef, useState, useEffect } from "react";
 //css
 import "./style/App.css";
 import "./style/Header.scss";
@@ -19,43 +19,15 @@ import Blog from "./Components/Blog";
 import Contact from "./Components/Contact";
 
 function App() {
-  let options = {
-    //fullpage scroll option
-    activeClass: "active",
-    anchors: ["home", "about", "services", "portfolio", "blog", "contact"],
-    arrowNavigation: true,
-    className: "SectionContainer",
-    delay: 1000,
-    navigation: true,
-    scrollBar: false,
-    sectionClassName: "Section",
-    sectionPaddingTop: "0",
-    sectionPaddingBottom: "0",
-    verticalAlign: false,
-  };
   return (
     <div className="App">
       <Header />
-      <SectionsContainer {...options}>
-        <Section>
-          <Home />
-        </Section>
-        <Section>
-          <About />
-        </Section>
-        <Section>
-          <Services />
-        </Section>
-        <Section>
-          <Portfolio />
-        </Section>
-        <Section>
-          <Blog />
-        </Section>
-        <Section>
-          <Contact />
-        </Section>
-      </SectionsContainer>
+      <Home />
+      <About />
+      <Services />
+      <Portfolio />
+      <Blog />
+      <Contact />
     </div>
   );
 }
