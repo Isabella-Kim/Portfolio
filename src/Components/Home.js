@@ -1,20 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faEnvelopeOpen } from "@fortawesome/free-solid-svg-icons";
+import Typewriter from "typewriter-effect";
 
-const Home = () => {
-  const [currentNameIndex, setCurrentNameIndex] = useState(0);
-  const names = ["JEONHGYEON", "ISABELLA"];
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentNameIndex((prevIndex) => (prevIndex === 0 ? 1 : 0));
-    }, 2000); // 2초마다 이름 변경
-
-    return () => {
-      clearInterval(intervalId); // 컴포넌트가 언마운트되면 interval 정리
-    };
-  }, []);
+const Home = ({ scrollToContact }) => {
   return (
     <div className="Home">
       <div className="wrapHomeInfo">
@@ -22,14 +11,20 @@ const Home = () => {
           <p className="name">MY NAME IS</p>
           <p className="name">KIM</p>
           <div className="chgWord">
-            <p className="name chgName">{names[currentNameIndex]}</p>
+            <Typewriter
+              options={{
+                strings: ["JEONGHYEON", "ISABELLA"],
+                autoStart: true,
+                loop: true,
+              }}
+            />
           </div>
           <p>
             <b>Front-end Developer </b>from RoK
           </p>
         </div>
         <div className="toContact">
-          <button>Let Us Make the Great Work</button>
+          <button onClick={scrollToContact}>Let Us Make the Great Work</button>
         </div>
         <div className="mail">
           <div className="wrapMail">
