@@ -1,5 +1,130 @@
 .About {
   width: 100%;
   height: 100vh;
-  background-color: rgb(202, 175, 255);
+  background-color: var(--base);
+  .inner {
+    width: 90%;
+    height: 100vh;
+    margin: auto;
+    .commonTitle {
+      width: fit-content;
+      text-align: center;
+      transform: translate(35%, 40%);
+      .subTitle {
+        font-size: clamp(20px, 1.56vw, 30px);
+        font-weight: 700;
+      }
+      .mainTitle {
+        font-size: clamp(48px, 3.33vw, 64px);
+        font-weight: 900;
+      }
+    }
+    .aboutMain {
+      height: 850px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      transform: translateY(-5%);
+      .aboutProfile {
+        transform: translateY(5%);
+        img {
+          width: clamp(265px, 26.04vw, 500px);
+        }
+        .aboutName {
+          text-align: center;
+          margin-top: 2rem;
+          line-height: 50px;
+          p {
+            font-size: clamp(20px, 1.88vw, 36px);
+            font-weight: 700;
+          }
+        }
+      }
+      .aboutDescription {
+        width: 55%;
+        .aboutMe {
+          padding: 2rem;
+          p:nth-child(1) {
+            font-size: clamp(20px, 1.25vw, 24px);
+            font-weight: 900;
+            margin-bottom: 1rem;
+          }
+          p:last-child {
+            font-size: clamp(16px, 1.25vw, 24px);
+            font-weight: 500;
+            color: #333;
+            line-height: 40px;
+          }
+        }
+        .aboutAccordion {
+          height: 385px;
+          border-bottom: 1px solid var(--primary);
+          .accordion {
+            .accTitle {
+              border-bottom: 1px solid var(--primary);
+              display: flex;
+              justify-content: space-between;
+              text-align: center;
+              align-items: center;
+              padding: 0.5rem 1rem;
+              .accTitleLeft {
+                display: flex;
+                align-items: center;
+                img {
+                  width: clamp(28px, 1.67vw, 32px);
+                  height: clamp(28px, 1.67vw, 32px);
+                  margin-right: 0.8rem;
+                }
+                h2 {
+                  font-size: clamp(30px, 1.88vw, 36px);
+                  font-weight: 900;
+                }
+              }
+              span {
+                width: clamp(28px, 1.67vw, 32px);
+                height: clamp(28px, 1.67vw, 32px);
+                background: url(../../public/images/About/sprite.png);
+                background-position: -32px 0;
+                &.eyeOpen {
+                  background-position: 0 0;
+                }
+              }
+            }
+            .accContent {
+              margin: 2rem auto;
+              display: none;
+              &.open {
+                display: block;
+              }
+              .accComponent {
+                display: flex;
+                align-items: center;
+                padding: 1rem 2rem;
+                img {
+                  margin-right: 0.8rem;
+                }
+                p {
+                  font-size: clamp(14px, 0.83vw, 16px);
+                  font-weight: 700;
+                }
+              }
+            }
+          }
+          .experience {
+            border-top: 1px solid var(--primary);
+          }
+        }
+        .aboutMotto {
+          text-align: right;
+          margin-top: 2rem;
+          h2 {
+            font-size: clamp(24px, 2.5vw, 48px);
+            font-weight: 900;
+            font-style: italic;
+            letter-spacing: 0.3rem;
+          }
+        }
+      }
+    }
+  }
 }
