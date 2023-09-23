@@ -1,5 +1,127 @@
 .Services {
   width: 100%;
   height: 100vh;
-  background-color: rgb(255, 250, 175);
+  background-color: var(--base);
+  .inner {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    .commonTitle {
+      position: absolute;
+      left: 10%;
+      top: 10%;
+      width: fit-content;
+      text-align: center;
+      .subTitle {
+        font-size: clamp(20px, 1.56vw, 30px);
+        font-weight: 700;
+      }
+      .mainTitle {
+        font-size: clamp(48px, 3.33vw, 64px);
+        font-weight: 900;
+      }
+    }
+    .wrapProCom {
+      padding: 2rem 1rem;
+      text-align: center;
+      .progress-component {
+        margin: 20px;
+        .proComLeft {
+          display: flex;
+          justify-content: space-between;
+          align-items: end;
+          .leftForFlex {
+            display: flex;
+            align-items: end;
+          }
+          h3 {
+            font-size: 12px;
+            margin-left: 0.5rem;
+            font-weight: 700;
+          }
+          p {
+            font-size: 10px;
+            font-weight: 700;
+            margin-left: 5rem;
+          }
+        }
+      }
+      .progress-bar {
+        background-color: var(--point);
+        height: 10px;
+        border-radius: 10px;
+        margin-top: 5px;
+        overflow: hidden;
+        .progress {
+          height: 100%;
+          background-color: var(--primary);
+          border-radius: 10px;
+        }
+      }
+    }
+    .wrapAcc {
+      position: absolute;
+      left: 50%;
+      top: 60%;
+      transform: translate(-50%, -50%);
+      max-height: 650px;
+      .accordion {
+        width: clamp(525px, 53vw, 1030px);
+        .accTitle {
+          border-bottom: 1px solid var(--primary);
+          display: flex;
+          justify-content: space-between;
+          text-align: center;
+          align-items: center;
+          padding: 0.5rem 1rem;
+          .accTitleLeft {
+            display: flex;
+            align-items: center;
+            img {
+              width: clamp(28px, 1.67vw, 32px);
+              height: clamp(28px, 1.67vw, 32px);
+              margin-right: 0.8rem;
+            }
+            h2 {
+              font-size: clamp(30px, 1.88vw, 36px);
+              font-weight: 900;
+            }
+          }
+          span {
+            width: clamp(28px, 1.67vw, 32px);
+            height: clamp(28px, 1.67vw, 32px);
+            background: url(../../public/images/About/sprite.png);
+            background-position: -32px 0;
+            &.eyeOpen {
+              background-position: 0 0;
+            }
+          }
+        }
+        .accContent {
+          margin: 2rem auto;
+          display: none;
+          &.open {
+            display: block;
+          }
+          .accordion-content {
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            grid-gap: 0 3rem;
+            text-align: center;
+            align-items: center;
+            width: fit-content;
+            height: 400px;
+            margin: 1rem auto;
+          }
+        }
+      }
+      .accDesign,
+      .accOffice {
+        border-top: 1px solid var(--primary);
+      }
+      .accOffice {
+        border-bottom: 1px solid var(--primary);
+      }
+    }
+  }
 }
