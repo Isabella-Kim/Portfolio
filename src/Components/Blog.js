@@ -1,13 +1,26 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { postings } from "./BlogData/Data";
-import { Swiper, SwiperSlide } from "swiper/react"; // basic
-import SwiperCore, { Navigation, Pagination } from "swiper";
-import "swiper/css"; //basic
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 
 const Blog = () => {
+  //롤링배너 복제
+  useEffect(() => {
+    let roller = document.querySelector(".eventContainer");
+    roller.id = "roller1"; //id부여
+
+    let clone = roller.cloneNode(true);
+    // cloneNode : 노드 복제. 기본값은 false. 자식 노드까지 복제를 원하면 true 사용
+    clone.id = "roller2";
+    document.querySelector(".wrapContainer").appendChild(clone); // wrapContainer 하위 자식으로 부착
+
+    document.querySelector("#roller1").style.left = "0px";
+    document.querySelector("#roller2").style.left =
+      document.querySelector(".eventContainer");
+
+    roller.classList.add("original");
+    clone.classList.add("clone");
+  }, []);
+
   return (
     <div className="Blog">
       <div className="blogTitle commonTitle">
@@ -29,35 +42,20 @@ const Blog = () => {
           alt=""
           className="film filmTop"
         />
-        <div className="postingArea">
-          <div className="posting">
-            <Swiper
-              spaceBetween={50}
-              slidesPerView={3}
-              scrollbar={{ draggable: true }}
-              navigation
-              pagination={{ clickable: true }}
-              breakpoints={{
-                768: {
-                  slidesPerView: 7,
-                },
-              }}
-            >
-              <SwiperSlide>
-                {postings.map((positings) => (
-                  <div key={positings.id} className="posting">
-                    <img src={positings.img} alt="" />
-                    <h2>{positings.title}</h2>
+        <div className="wrapContainer">
+          {/* 배너표시영역 */}
+          <div className="eventContainer">
+            {/* 원본배너 */}
+            <div className="postingsWrap">
+              <div className="postings">
+                {postings.map((post, index) => (
+                  <div key={post.id} className="posting">
+                    <img src={post.img} alt={post.title} />
+                    <h2>{post.title}</h2>
                   </div>
                 ))}
-              </SwiperSlide>
-            </Swiper>
-            {/* {postings.map((positings) => (
-              <div key={positings.id} className="posting">
-                <img src={positings.img} alt="" />
-                <h2>{positings.title}</h2>
               </div>
-            ))} */}
+            </div>
           </div>
         </div>
         <img
