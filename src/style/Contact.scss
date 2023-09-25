@@ -9,7 +9,7 @@
     position: relative;
     .commonTitle {
       width: fit-content;
-      transform: translate(50%, 40%);
+      transform: translate(50%, 55%);
       p {
         font-size: clamp(16px, 1.56vw, 24px);
       }
@@ -28,7 +28,7 @@
     }
     .sendMail {
       position: absolute;
-      top: 52%;
+      top: 55%;
       left: 50%;
       transform: translate(-50%, -50%);
       width: 55%;

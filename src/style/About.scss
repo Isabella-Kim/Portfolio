@@ -50,10 +50,16 @@
             margin-bottom: 1rem;
           }
           p:last-child {
-            font-size: clamp(16px, 1.25vw, 24px);
+            font-size: clamp(16px, 1.04vw, 20px);
             font-weight: 500;
             color: #333;
-            line-height: 40px;
+            line-height: 35px;
+            i {
+              display: inline-block;
+              margin-bottom: 0.8rem;
+              font-size: clamp(16px, 1.25vw, 24px);
+              font-weight: 700;
+            }
           }
         }
         .aboutAccordion {
