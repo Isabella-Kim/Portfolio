@@ -33,7 +33,7 @@ const coding = [
   {
     id: 6,
     title: "REACT",
-    progress: 65,
+    progress: 70,
     img: "React.png",
   },
 ];

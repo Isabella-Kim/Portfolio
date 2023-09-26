@@ -34,7 +34,7 @@ const postings = [
   {
     id: 6,
     title: "[104일차]Redux로 상태관리하기",
-    img: "../../images/Blog/106.png",
+    img: "../../images/Blog/104.png",
     url: "https://blog.naver.com/jack6512/223215071772",
   },
 ];

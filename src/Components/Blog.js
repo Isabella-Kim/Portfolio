@@ -15,7 +15,7 @@ const Blog = () => {
 
     document.querySelector("#roller1").style.left = "0px";
     document.querySelector("#roller2").style.left =
-      document.querySelector(".eventContainer");
+      document.querySelector("#roller1").offsetWidth + "px";
 
     roller.classList.add("original");
     clone.classList.add("clone");
@@ -50,8 +50,10 @@ const Blog = () => {
               <div className="postings">
                 {postings.map((post, index) => (
                   <div key={post.id} className="posting">
-                    <img src={post.img} alt={post.title} />
-                    <h2>{post.title}</h2>
+                    <Link to={post.url} target="_blank">
+                      <img src={post.img} alt={post.title} />
+                      <h2>{post.title}</h2>
+                    </Link>
                   </div>
                 ))}
               </div>

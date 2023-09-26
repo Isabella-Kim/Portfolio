@@ -1,7 +1,25 @@
 * {
   color: var(--primary);
 }
-.App {
+/* .App {
   display: grid;
   grid-template-columns: 1fr 4.55fr;
+} */
+.mySections {
+  width: 82%;
+  float: right;
+}
+body::-webkit-scrollbar {
+  width: 10px; /* 스크롤바의 너비 */
+}
+
+body::-webkit-scrollbar-thumb {
+  height: 15%; /* 스크롤바의 길이 */
+  background: var(--point); /* 스크롤바의 색상 */
+
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--primary); /*스크롤바 뒷 배경 색상*/
 }
