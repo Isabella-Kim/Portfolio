@@ -2,11 +2,11 @@ import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/pagination";
+//import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 // import required modules
-import { Pagination, Navigation } from "swiper/modules";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 const Portfolio = () => {
   return (
@@ -19,23 +19,22 @@ const Portfolio = () => {
         <Swiper
           slidesPerView={3}
           spaceBetween={30}
-          loop={true}
+          loop={false}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
           pagination={{
             clickable: true,
           }}
           navigation={true}
-          modules={[Pagination, Navigation]}
+          modules={[Autoplay, Pagination, Navigation]}
           className="mySwiper"
         >
           <SwiperSlide className="swiperSlide">Slide 1</SwiperSlide>
           <SwiperSlide className="swiperSlide">Slide 2</SwiperSlide>
           <SwiperSlide className="swiperSlide">Slide 3</SwiperSlide>
           <SwiperSlide className="swiperSlide">Slide 4</SwiperSlide>
-          <SwiperSlide className="swiperSlide">Slide 5</SwiperSlide>
-          <SwiperSlide className="swiperSlide">Slide 6</SwiperSlide>
-          <SwiperSlide className="swiperSlide">Slide 7</SwiperSlide>
-          <SwiperSlide className="swiperSlide">Slide 8</SwiperSlide>
-          <SwiperSlide className="swiperSlide">Slide 9</SwiperSlide>
         </Swiper>
       </div>
     </div>
