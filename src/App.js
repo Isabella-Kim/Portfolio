@@ -7,6 +7,7 @@ import "./style/Home.scss";
 import "./style/About.scss";
 import "./style/Services.scss";
 import "./style/Portfolio.scss";
+import "./style/PortfolioModal.scss";
 import "./style/Blog.scss";
 import "./style/Contact.scss";
 //Components

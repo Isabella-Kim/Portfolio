@@ -9,7 +9,7 @@ const front = [
   },
   {
     id: 2,
-    icon: "../../images/Portfolio/MoonStar.png",
+    icon: "../../images/Portfolio/MoonStars.png",
     categoty: "Personal PJ",
     title: "'Sea Life Busan' 리뉴얼 프로젝트",
     img: "../../images/Portfolio/Busan.png",

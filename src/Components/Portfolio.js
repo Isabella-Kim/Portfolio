@@ -1,14 +1,30 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
+//swiper component
 import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper styles
 import "swiper/css";
-//import "swiper/css/pagination";
 import "swiper/css/navigation";
-
+import "swiper/css/effect-fade";
 // import required modules
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
+//Data
+import { front } from "./PortfolioData/FrontData";
+//component
+import PortfolioModal from "./PortfolioModal";
 
 const Portfolio = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  const openModal = (item) => {
+    setSelectedItem(item);
+    setIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setSelectedItem(null);
+    setIsOpen(false);
+  };
+
   return (
     <div className="Portfolio">
       <div className="aboutTitle commonTitle">
@@ -17,26 +33,44 @@ const Portfolio = () => {
       </div>
       <div className="slideWrap">
         <Swiper
+          effect="fade"
           slidesPerView={3}
           spaceBetween={30}
           loop={false}
           autoplay={{
-            delay: 2500,
+            delay: 3000,
             disableOnInteraction: false,
           }}
-          pagination={{
-            clickable: true,
-          }}
           navigation={true}
-          modules={[Autoplay, Pagination, Navigation]}
+          modules={[Autoplay, Navigation]}
           className="mySwiper"
         >
-          <SwiperSlide className="swiperSlide">Slide 1</SwiperSlide>
-          <SwiperSlide className="swiperSlide">Slide 2</SwiperSlide>
-          <SwiperSlide className="swiperSlide">Slide 3</SwiperSlide>
-          <SwiperSlide className="swiperSlide">Slide 4</SwiperSlide>
+          {front.map((item) => {
+            return (
+              <SwiperSlide
+                className="swiperSlide"
+                key={item.id}
+                onClick={() => openModal(item)}
+              >
+                <div className="dataWrap">
+                  <img src={item.icon} alt="" className="icon" />
+                  <div className="txtInfo">
+                    <h4>{item.categoty}</h4>
+                    <h2>{item.title}</h2>
+                  </div>
+                  <img src={item.img} alt="" className="pj" />
+                </div>
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
       </div>
+      {isOpen && (
+        <PortfolioModal
+          item={selectedItem}
+          closeModal={closeModal} // 모달 닫기 함수 전달
+        />
+      )}
     </div>
   );
 };

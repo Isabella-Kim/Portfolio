@@ -47,4 +47,23 @@
       }
     }
   }
+  .wrapLink {
+    position: absolute;
+    bottom: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 200;
+    svg {
+      padding: 0.5rem 1rem;
+      width: 45px;
+      height: 45px;
+      path {
+        color: var(--base);
+        transition: 0.3s;
+        &:hover {
+          color: var(--point);
+        }
+      }
+    }
+  }
 }

@@ -1,4 +1,7 @@
 import { Link, animateScroll as scroll } from "react-scroll";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faFeather } from "@fortawesome/free-solid-svg-icons";
 
 function Header() {
   return (
@@ -44,6 +47,22 @@ function Header() {
             </Link>
           </li>
         </ul>
+      </div>
+      <div className="wrapLink">
+        <Link>
+          <FontAwesomeIcon
+            icon={faGithub}
+            onClick={() =>
+              window.open("https://github.com/Isabella-Kim", "_blank")
+            }
+          />
+          <FontAwesomeIcon
+            icon={faFeather}
+            onClick={() =>
+              window.open("https://m.blog.naver.com/jack6512", "_blank")
+            }
+          />
+        </Link>
       </div>
     </div>
   );

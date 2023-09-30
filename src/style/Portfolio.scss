@@ -1,13 +1,15 @@
 .Portfolio {
   width: 100%;
   height: 100vh;
-  background-color: rgb(210, 237, 255);
+  background-color: var(--base);
   position: relative;
   overflow-x: hidden;
+  overflow-y: hidden;
+  z-index: 10;
   .commonTitle {
     width: fit-content;
     text-align: center;
-    transform: translate(35%, 70%);
+    transform: translate(35%, 100%);
     .subTitle {
       font-size: clamp(20px, 1.56vw, 30px);
       font-weight: 700;
@@ -22,15 +24,75 @@
     top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 1px solid red;
+    //border: 1px solid red;
     width: 85%;
+    height: fit-content;
     margin: auto;
     .mySwiper {
+      //border: 1px solid red;
       .swiper-wrapper {
         .swiperSlide {
-          border: 3px solid orange;
+          border-radius: 10px;
+          background-color: var(--slide);
           width: clamp(320px, 20.83vw, 400px);
           height: 575px;
+          cursor: pointer;
+        }
+        .dataWrap {
+          border: 5px solid var(--base);
+          border-radius: 10px;
+          width: 92%;
+          height: 95%;
+          margin: 0.6rem auto;
+          text-align: center;
+          position: relative;
+          transition: 0.3s;
+          &:hover {
+            transform: scale(95%);
+            border: 5px solid var(--subPoint);
+            .pj {
+              border: 5px solid var(--subPoint);
+            }
+          }
+          .icon {
+            width: 32px;
+            height: 32px;
+            position: absolute;
+            top: 6%;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+          .txtInfo {
+            position: absolute;
+            width: 100%;
+            top: 16%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--base);
+            h4 {
+              font-family: Pacifico;
+              font-size: clamp(16px, 1.04vw, 20px);
+              font-weight: 900;
+              margin-bottom: 1.5rem;
+              color: var(--base);
+            }
+            h2 {
+              font-size: clamp(16px, 1.04vw, 20px);
+              font-weight: 900;
+              color: var(--base);
+            }
+          }
+          .pj {
+            position: absolute;
+            bottom: 6%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: clamp(240px, 15.63vw, 300px);
+            height: clamp(240px, 15.63vw, 300px);
+            border: 5px solid var(--base);
+            border-radius: 10px;
+            object-fit: fill;
+          }
         }
       }
       .swiper-button-next::after,
@@ -40,19 +102,14 @@
       .swiper-button-prev {
         position: absolute;
         font-family: unset;
-        background: url(../../public/images/Portfolio/btnPrev.png);
         width: 60px;
         height: 60px;
-        position: absolute;
-        left: -6%;
       }
       .swiper-button-next {
         position: absolute;
         font-family: unset;
-        background: url(../../public/images/Portfolio/btnNext.png);
         width: 60px;
         height: 60px;
-        right: -6%;
       }
     }
   }
